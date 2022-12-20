@@ -1,0 +1,11 @@
+.page {
+   @apply flex h-screen w-screen flex-col items-center justify-center bg-background;
+}
+
+.welcome-text {
+   @apply mt-6 text-3xl text-whitesmoke;
+}
+
+.buttons {
+   @apply mt-16 flex space-x-3;
+}

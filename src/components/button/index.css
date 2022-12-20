@@ -1,0 +1,11 @@
+.button {
+   @apply flex flex-row items-center rounded-full bg-secondary px-4 py-3 text-sm;
+}
+
+.button:hover {
+   @apply bg-opacity-80;
+}
+
+.button-text {
+   @apply text-base text-whitesmoke;
+}
