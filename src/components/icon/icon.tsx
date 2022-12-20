@@ -1,9 +1,6 @@
 import { icons, IconTypes } from './icons';
 
-type IntrinsicIconProps = React.DetailedHTMLProps<
-   React.ImgHTMLAttributes<HTMLImageElement>,
-   HTMLImageElement
->;
+type IntrinsicIconProps = React.ImgHTMLAttributes<HTMLImageElement>;
 
 interface IconProps {
    icon: IconTypes;

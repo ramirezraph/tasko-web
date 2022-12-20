@@ -1,25 +1,26 @@
 import { IconTypes } from 'components/icon/icons';
 import { Icon } from 'components/icon/loadable';
-import { Link } from 'react-router-dom';
-import './index.css';
 
-type IntrinsicButtonProps = React.DetailedHTMLProps<
-   React.ButtonHTMLAttributes<HTMLButtonElement>,
-   HTMLButtonElement
->;
+type IntrinsicButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 interface ButtonProps {
    icon?: IconTypes;
    text: string;
+   textClassName?: string;
 }
 
 export function Button(props: ButtonProps & IntrinsicButtonProps) {
-   const { icon, text, ...rest } = props;
+   const { icon, text, className, textClassName, ...rest } = props;
 
    return (
-      <button className="button" {...rest}>
+      <button
+         className={`flex flex-row items-center rounded-full bg-secondary px-4 py-3 text-sm ${className}`}
+         {...rest}
+      >
          {icon ? <Icon icon={icon} className="mr-2" /> : null}
-         <span className="button-text">{text}</span>
+         <span className={`text-base text-whitesmoke ${textClassName}`}>
+            {text}
+         </span>
       </button>
    );
 }
