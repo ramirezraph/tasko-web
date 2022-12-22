@@ -13,7 +13,7 @@ export function ProjectCard(props: ProjectCardProps) {
    const { title, dateCreated, status } = props;
 
    return (
-      <button className="rounded-md p-4 hover:bg-[#272D36]">
+      <button className="rounded-md p-4 transition-colors duration-300 ease-in-out hover:bg-[#272D36]">
          <div className="flex justify-between">
             <h2 className="text-xl font-semibold text-primary">{title}</h2>
             <Icon icon="arrowRight" />
