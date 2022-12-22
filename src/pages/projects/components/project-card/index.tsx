@@ -42,7 +42,7 @@ export function ProjectCard(props: ProjectCardProps) {
                />
             </div>
             <div className="flex space-x-6">
-               <span>{dateCreated}</span>
+               <span className="hidden md:inline">{dateCreated}</span>
                <div className="flex items-center space-x-2">
                   <div className="h-2 w-2 bg-primary"></div>
                   <span>{status}</span>

@@ -6,7 +6,9 @@ function AvatarWithUserName() {
    return (
       <div className="flex items-center space-x-3">
          <Avatar initials={'RR'} backgroundColor="#FFD369" />
-         <span className="text-sm text-whitesmoke">Raphael Ramirez</span>
+         <span className="hidden text-sm text-whitesmoke sm:inline">
+            Raphael Ramirez
+         </span>
       </div>
    );
 }
