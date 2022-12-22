@@ -18,7 +18,7 @@ export function Button(props: ButtonProps & IntrinsicButtonProps) {
          {...rest}
       >
          {icon ? <Icon icon={icon} className="mr-2" /> : null}
-         <span className={`text-base text-whitesmoke ${textClassName}`}>
+         <span className={`w-full text-base text-whitesmoke ${textClassName}`}>
             {text}
          </span>
       </button>

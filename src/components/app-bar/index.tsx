@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function AvatarWithUserName() {
    return (
       <div className="flex items-center space-x-3">
-         <Avatar />
+         <Avatar initials={'RR'} backgroundColor="#FFD369" />
          <span className="text-sm text-whitesmoke">Raphael Ramirez</span>
       </div>
    );
@@ -14,7 +14,7 @@ function AvatarWithUserName() {
 export function AppBar() {
    return (
       <div className="flex items-center justify-between">
-         <Link to="/tasks">
+         <Link to="/">
             <span className="text-3xl font-semibold text-primary">Tasko</span>
          </Link>
          <div className="flex space-x-6">

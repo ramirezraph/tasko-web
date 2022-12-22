@@ -15,10 +15,6 @@ export function NoProject() {
                <span className="text-primary">Join</span>
             </button>
          </p>
-         <div className="mt-16 flex space-x-3 ">
-            <Button icon="plus" text="Create new project" />
-            <Button icon="invite" text="Join" />
-         </div>
       </div>
    );
 }

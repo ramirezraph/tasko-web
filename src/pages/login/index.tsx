@@ -14,7 +14,7 @@ export function Login() {
          <p className="mt-3">Please login to continue.</p>
 
          <div className="mt-16 flex space-x-3">
-            <Link to="/tasks">
+            <Link to="/">
                <Button text="Login" icon="login" />
             </Link>
             <Button text="Create an account" icon="userPlus" />

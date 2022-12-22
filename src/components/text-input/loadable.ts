@@ -1,6 +1,6 @@
 import { lazyLoad } from 'utils/loadable';
 
-export const Tasks = lazyLoad(
+export const TextInput = lazyLoad(
    () => import('./index'),
-   (module) => module.Tasks
+   (module) => module.TextInput
 );

@@ -14,3 +14,23 @@
 
    @apply bg-background text-text;
 }
+
+/* width */
+::-webkit-scrollbar {
+   width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+   @apply bg-background;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+   @apply bg-text;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+   @apply bg-secondary;
+}
