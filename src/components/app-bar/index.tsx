@@ -16,8 +16,11 @@ function AvatarWithUserName() {
 export function AppBar() {
    return (
       <div className="flex items-center justify-between">
-         <Link to="/">
-            <span className="text-3xl font-semibold text-primary">Tasko</span>
+         <Link
+            to="/"
+            className="transition-color text-3xl font-semibold  text-primary duration-300 ease-in-out hover:text-[#FFDA81]"
+         >
+            Tasko
          </Link>
          <div className="flex space-x-6">
             <AvatarWithUserName />

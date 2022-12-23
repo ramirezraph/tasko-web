@@ -15,8 +15,11 @@ export function ActionIcon(props: Props) {
    const { icon, onPress, className, iconClassName } = props;
 
    return (
-      <button onClick={onPress} className={`${className}`}>
-         <Icon icon={icon} className={iconClassName} />
+      <button onClick={onPress} className={`group  ${className}`}>
+         <Icon
+            icon={icon}
+            className={`transition-transform duration-300 ease-in-out group-hover:scale-110 ${iconClassName}`}
+         />
       </button>
    );
 }

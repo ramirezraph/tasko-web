@@ -1,4 +1,4 @@
-import { CreateProject, Login, Main, Projects } from 'pages';
+import { CreateProject, Login, Main, Projects, Project } from 'pages';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
@@ -6,7 +6,6 @@ import {
    createRoutesFromElements,
    Route,
    RouterProvider,
-   Routes,
 } from 'react-router-dom';
 import './index.css';
 
@@ -16,6 +15,7 @@ const router = createBrowserRouter(
          <Route index element={<Projects />} />
          <Route path="/projects" element={<Projects />} />
          <Route path="/projects/create" element={<CreateProject />} />
+         <Route path="/:projectId" element={<Project />} />
       </Route>,
       <Route path="/login" element={<Login />} />,
    ])
