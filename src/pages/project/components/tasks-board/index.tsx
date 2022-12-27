@@ -1,10 +1,10 @@
 import { TasksContainer } from 'components/tasks-container/loadable';
-import { Column, Task, TaskStatus } from 'pages/project';
 import {
    DragDropContext,
    DropResult,
    ResponderProvided,
 } from '@hello-pangea/dnd';
+import { Column, Task, TaskStatus } from 'data/models';
 
 type IntrinsicDivProps = React.HTMLAttributes<HTMLDivElement>;
 

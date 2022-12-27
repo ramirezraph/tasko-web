@@ -1,0 +1,47 @@
+[
+  {
+    "id": "35ea8588-7ce8-4d79-83bd-130173a97012",
+    "firstName": "Raphael",
+    "middleName": "Legaspi",
+    "lastName": "Ramirez",
+    "avatarColor": "#FFD369",
+    "projectIds": [
+      "54dee36e-42b3-4029-810c-a99a01c27178",
+      "7f000d34-cd6a-4a93-9b76-f9fe6c26bd9a",
+      "0c09d2b3-c86e-47f5-82d2-1771651e71d5"
+    ]
+  },
+  {
+    "id": "cf6304f3-e9e0-43dd-a544-d87a7ae79840",
+    "firstName": "Donata",
+    "middleName": "Les",
+    "lastName": "Ana",
+    "avatarColor": "#698AFF",
+    "projectIds": [
+      "54dee36e-42b3-4029-810c-a99a01c27178",
+      "0c09d2b3-c86e-47f5-82d2-1771651e71d5"
+    ]
+  }, 
+  {
+    "id": "d040fa7b-a31a-4018-b7f5-141093114d88",
+    "firstName": "Georg",
+    "middleName": "Whash",
+    "lastName": "Guy",
+    "avatarColor": "#6CFF69",
+    "projectIds": [
+      "54dee36e-42b3-4029-810c-a99a01c27178",
+      "7f000d34-cd6a-4a93-9b76-f9fe6c26bd9a",
+      "0c09d2b3-c86e-47f5-82d2-1771651e71d5"
+    ]
+  },
+  {
+    "id": "aa5e7446-6623-44fa-84ea-bfe5a7255edc",
+    "firstName": "Antony",
+    "middleName": "Wel",
+    "lastName": "Davos",
+    "avatarColor": "#FF7269",
+    "projectIds": [
+      "0c09d2b3-c86e-47f5-82d2-1771651e71d5"
+    ]
+  }
+]

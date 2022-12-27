@@ -1,24 +1,41 @@
-import { Avatar } from 'components/avatar/loadable';
 import { Icon } from 'components/icon/loadable';
+import { ProjectMembers } from 'components/project-members/loadable';
 import { ProjectStatus } from 'components/project-status/loadable';
+import { Project, UserProfile } from 'data/models';
+import { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-interface ProjectCardProps {
-   title: string;
-   dateCreated: string;
-   status: string;
+import usersJson from 'data/users.json';
 
+interface ProjectCardProps {
+   project: Project;
    onClick?: () => void;
 }
 
 export function ProjectCard(props: ProjectCardProps) {
-   const { title, dateCreated, status } = props;
+   const { project } = props;
+
+   const { title, dateCreated, status, memberIds } = project;
 
    const navigate = useNavigate();
 
    const onCardClicked = () => {
       navigate('abc');
    };
+
+   const members: UserProfile[] = useMemo(() => {
+      return usersJson
+         .filter((user) => memberIds.includes(user.id))
+         .map((user) => {
+            return {
+               id: user.id,
+               firstName: user.firstName,
+               middleName: user.middleName,
+               lastName: user.lastName,
+               avatarColor: user.avatarColor,
+            };
+         });
+   }, [usersJson, memberIds]);
 
    return (
       <button
@@ -30,28 +47,7 @@ export function ProjectCard(props: ProjectCardProps) {
             <Icon icon="arrowRight" />
          </div>
          <div className="mt-4 flex items-center justify-between">
-            <div className="flex -space-x-4">
-               <Avatar
-                  initials="GG"
-                  className="p-1"
-                  backgroundColor="#6CFF69"
-               />
-               <Avatar
-                  initials="RR"
-                  className="p-1"
-                  backgroundColor="#FFD369"
-               />
-               <Avatar
-                  initials="DA"
-                  className="p-1"
-                  backgroundColor="#698AFF"
-               />
-               <Avatar
-                  initials="+5"
-                  className="p-1"
-                  backgroundColor="#FAFAFA"
-               />
-            </div>
+            <ProjectMembers members={members} />
             <div className="flex space-x-6">
                <span className="hidden md:inline">{dateCreated}</span>
                <ProjectStatus status={status} />

@@ -1,5 +1,5 @@
-import { Project } from 'pages/projects';
-import { ProjectCard } from '../project-card/loadable';
+import { ProjectCard } from 'components/project-card/loadable';
+import { Project } from 'data/models';
 
 interface ProjectListProps {
    projects: Project[];
@@ -14,13 +14,8 @@ export function ProjectList(props: ProjectListProps) {
             My Projects
          </h1>
          <div className="mt-12 flex flex-col space-y-12">
-            {projects.map((item, index) => (
-               <ProjectCard
-                  key={index}
-                  title={item.title}
-                  dateCreated={item.dateCreated}
-                  status={item.status}
-               />
+            {projects.map((project, index) => (
+               <ProjectCard key={index} project={project} />
             ))}
          </div>
       </div>
