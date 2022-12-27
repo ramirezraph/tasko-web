@@ -1,14 +1,17 @@
+import { Draggable } from '@hello-pangea/dnd';
 import { Avatar } from 'components/avatar/loadable';
-import { useEffect, useMemo } from 'react';
+import { Task } from 'pages/project';
+import { useMemo } from 'react';
 
 interface TaskCardProps {
-   title: string;
-   due: string;
-   progressPercentage: number;
+   index: number;
+   task: Task;
 }
 
 export function TaskCard(props: TaskCardProps) {
-   const { title, due, progressPercentage } = props;
+   const { index, task } = props;
+
+   const { id, title, dueDate, progressPercentage, status, description } = task;
 
    const progress = useMemo(() => {
       return `${progressPercentage}%`;
@@ -33,31 +36,41 @@ export function TaskCard(props: TaskCardProps) {
    }, [progressPercentage]);
 
    return (
-      <div className="rounded-md bg-background p-4">
-         <div className="flex items-start justify-between">
-            <div className="flex flex-col space-y-1">
-               <p className="text-sm text-primary">{title}</p>
-               <p className="text-xs text-text">{due}</p>
-            </div>
-            <div>
-               <Avatar
-                  initials={'RR'}
-                  color="bg-primary"
-                  className="h-8 w-8"
-                  textClassName="text-xs"
-               />
-            </div>
-         </div>
-         <div className="mt-7 flex items-center justify-between space-x-2 2xl:space-x-3">
+      <Draggable draggableId={id} index={index}>
+         {(provided, snapshot) => (
             <div
-               className="h-1"
-               style={{
-                  width: progressWidth,
-                  backgroundColor: progressColor,
-               }}
-            />
-            <span>{progress}</span>
-         </div>
-      </div>
+               className="mb-2 rounded-md bg-background p-4 hover:bg-background/70"
+               ref={provided.innerRef}
+               {...provided.draggableProps}
+               {...provided.dragHandleProps}
+               onClick={() => console.log('Task Clicked', task)}
+            >
+               <div className="flex items-start justify-between">
+                  <div className="flex flex-col space-y-1">
+                     <p className="text-sm text-primary">{title}</p>
+                     <p className="text-xs text-text">{dueDate}</p>
+                  </div>
+                  <div>
+                     <Avatar
+                        initials={'RR'}
+                        color="bg-primary"
+                        className="h-8 w-8"
+                        textClassName="text-xs"
+                     />
+                  </div>
+               </div>
+               <div className="mt-7 flex items-center justify-between space-x-2 2xl:space-x-3">
+                  <div
+                     className="h-1"
+                     style={{
+                        width: progressWidth,
+                        backgroundColor: progressColor,
+                     }}
+                  />
+                  <span>{progress}</span>
+               </div>
+            </div>
+         )}
+      </Draggable>
    );
 }
