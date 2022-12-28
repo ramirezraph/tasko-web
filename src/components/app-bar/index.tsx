@@ -5,7 +5,15 @@ import { Link } from 'react-router-dom';
 function AvatarWithUserName() {
    return (
       <div className="flex items-center space-x-3">
-         <Avatar initials={'RR'} backgroundColor="#FFD369" />
+         <Avatar
+            backgroundColor="#FFD369"
+            userId={'35ea8588-7ce8-4d79-83bd-130173a97012'}
+            firstName="Raphael"
+            lastName="Ramirez"
+            onClick={(userId) => {
+               console.log(userId);
+            }}
+         />
          <span className="hidden text-sm text-whitesmoke sm:inline">
             Raphael Ramirez
          </span>

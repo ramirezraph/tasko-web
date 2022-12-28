@@ -20,7 +20,7 @@ export function ProjectCard(props: ProjectCardProps) {
    const navigate = useNavigate();
 
    const onCardClicked = () => {
-      navigate('abc');
+      navigate(project.id);
    };
 
    const members: UserProfile[] = useMemo(() => {

@@ -1,6 +1,6 @@
 import { Draggable } from '@hello-pangea/dnd';
 import { Avatar } from 'components/avatar/loadable';
-import { Task } from 'pages/project';
+import { Task } from 'data/models';
 import { useMemo } from 'react';
 
 interface TaskCardProps {
@@ -52,7 +52,9 @@ export function TaskCard(props: TaskCardProps) {
                   </div>
                   <div>
                      <Avatar
-                        initials={'RR'}
+                        userId={''}
+                        firstName={'Raphael'}
+                        lastName={'Ramirez'}
                         color="bg-primary"
                         className="h-8 w-8"
                         textClassName="text-xs"

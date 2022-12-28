@@ -39,5 +39,67 @@
       "taskIds":[
          "587111ab-2798-4ae5-abe7-907b8d9d9266"
       ]
+   },
+   {
+      "id":"17f43f0a-55c3-4067-8501-1ca664b96559",
+      "projectId":"7f000d34-cd6a-4a93-9b76-f9fe6c26bd9a",
+      "title":"to do",
+      "taskIds":[]
+   },
+   {
+      "id":"6717a759-6208-498b-9b0f-e79d4918d770",
+      "projectId":"7f000d34-cd6a-4a93-9b76-f9fe6c26bd9a",
+      "title":"on hold",
+      "taskIds":[]
+   },
+   {
+      "id":"f2a747b3-1460-4dd3-90bd-ccd2984a556b",
+      "projectId":"7f000d34-cd6a-4a93-9b76-f9fe6c26bd9a",
+      "title":"in progress",
+      "taskIds":[
+      ]
+   },
+   {
+      "id":"69fed62c-8924-47f5-885f-d9274ecf874e",
+      "projectId":"7f000d34-cd6a-4a93-9b76-f9fe6c26bd9a",
+      "title":"review",
+      "taskIds":[]
+   },
+   {
+      "id":"f0e5f907-8d16-4ca2-a304-3df9387799bf",
+      "projectId":"7f000d34-cd6a-4a93-9b76-f9fe6c26bd9a",
+      "title":"done",
+      "taskIds":[]
+   },
+   {
+      "id":"5ed83faa-87a6-4d0e-b85e-95535bb469d4",
+      "projectId":"0c09d2b3-c86e-47f5-82d2-1771651e71d5",
+      "title":"to do",
+      "taskIds":[]
+   },
+   {
+      "id":"768a2ae5-c4ac-489c-a933-98d69d5a6f24",
+      "projectId":"0c09d2b3-c86e-47f5-82d2-1771651e71d5",
+      "title":"on hold",
+      "taskIds":[]
+   },
+   {
+      "id":"f8c497d1-a2bc-429e-846d-c06cbe06acaa",
+      "projectId":"0c09d2b3-c86e-47f5-82d2-1771651e71d5",
+      "title":"in progress",
+      "taskIds":[
+      ]
+   },
+   {
+      "id":"1d89f373-4ac1-4693-aea2-41790af08092",
+      "projectId":"0c09d2b3-c86e-47f5-82d2-1771651e71d5",
+      "title":"review",
+      "taskIds":[]
+   },
+   {
+      "id":"0c8f7628-d763-47c7-9ed4-daf579d68e43",
+      "projectId":"0c09d2b3-c86e-47f5-82d2-1771651e71d5",
+      "title":"done",
+      "taskIds":[]
    }
 ]

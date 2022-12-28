@@ -2,6 +2,7 @@ import { TaskStatus } from './enums/taskStatus';
 
 export class Task {
    id: string;
+   projectId: string;
    title: string;
    description: string;
    dueDate: string;
@@ -10,6 +11,7 @@ export class Task {
 
    constructor(
       id: string,
+      projectId: string,
       title: string,
       description: string,
       dueDate: string,
@@ -17,6 +19,7 @@ export class Task {
       status: TaskStatus
    ) {
       this.id = id;
+      this.projectId = projectId;
       this.title = title;
       this.description = description;
       this.dueDate = dueDate;
