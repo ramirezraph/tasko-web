@@ -1,4 +1,3 @@
-import { Avatar } from 'components/avatar/loadable';
 import { Avatars } from 'components/avatars/loadable';
 import { UserProfile } from 'data/models';
 
@@ -12,12 +11,7 @@ export function ProjectMembers(props: Props) {
 
    return (
       <div className="flex -space-x-4">
-         <Avatars
-            users={members}
-            onItemClick={(userId) => {
-               console.log(userId);
-            }}
-         />
+         <Avatars users={members} onItemClick={onClick} />
       </div>
    );
 }
