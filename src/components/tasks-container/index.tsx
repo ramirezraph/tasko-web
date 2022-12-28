@@ -1,5 +1,6 @@
 import { Droppable } from '@hello-pangea/dnd';
 import { TaskCard } from 'components/task-card/loadable';
+import { TasksContainerTitle } from 'components/tasks-container-title/loadable';
 import { Task } from 'data/models';
 
 interface TasksContainerProps {
@@ -14,11 +15,9 @@ export function TasksContainer(props: TasksContainerProps) {
 
    return (
       <div className="flex w-96 flex-col space-y-2 rounded-lg bg-secondary/30 p-4 2xl:flex-1">
-         <span className="select-none text-xs font-light uppercase text-whitesmoke/40">
-            {title}
-         </span>
+         <TasksContainerTitle>{title}</TasksContainerTitle>
          <Droppable droppableId={id}>
-            {(provided, snapshot) => (
+            {(provided) => (
                <div
                   className="h-full w-full"
                   ref={provided.innerRef}

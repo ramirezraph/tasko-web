@@ -1,7 +1,7 @@
 import { Draggable } from '@hello-pangea/dnd';
-import { Avatar } from 'components/avatar/loadable';
+import { TaskAssignees } from 'components/task-assignees/loadable';
+import { TaskProgress } from 'components/task-progress/loadable';
 import { Task } from 'data/models';
-import { useMemo } from 'react';
 
 interface TaskCardProps {
    index: number;
@@ -13,31 +13,9 @@ export function TaskCard(props: TaskCardProps) {
 
    const { id, title, dueDate, progressPercentage, assigneeIds } = task;
 
-   const progress = useMemo(() => {
-      return `${progressPercentage}%`;
-   }, [progressPercentage]);
-
-   const progressWidth = useMemo(() => {
-      return progressPercentage === 0 ? '2%' : `${progressPercentage}%`;
-   }, [progressPercentage]);
-
-   const progressColor = useMemo(() => {
-      if (progressPercentage >= 0 && progressPercentage <= 25) {
-         return '#FF6969';
-      } else if (progressPercentage >= 26 && progressPercentage <= 50) {
-         return '#FFCC69';
-      } else if (progressPercentage >= 51 && progressPercentage <= 75) {
-         return '#FCFF69';
-      } else if (progressPercentage >= 76 && progressPercentage <= 99) {
-         return '#B4FF69';
-      } else if (progressPercentage === 100) {
-         return '#69FF81';
-      }
-   }, [progressPercentage]);
-
    return (
       <Draggable draggableId={id} index={index}>
-         {(provided, snapshot) => (
+         {(provided) => (
             <div
                className="mb-2 rounded-md bg-background p-4 hover:bg-background/70"
                ref={provided.innerRef}
@@ -50,31 +28,12 @@ export function TaskCard(props: TaskCardProps) {
                      <p className="text-sm text-primary">{title}</p>
                      <p className="text-xs text-text">{dueDate}</p>
                   </div>
-                  <div>
-                     <Avatar
-                        user={{
-                           id: '35ea8588-7ce8-4d79-83bd-130173a97012',
-                           firstName: 'Raphael',
-                           middleName: 'Legaspi',
-                           lastName: 'Ramirez',
-                           avatarColor: '#FFD369',
-                        }}
-                        color="bg-primary"
-                        className="h-8 w-8"
-                        textClassName="text-xs"
-                     />
-                  </div>
+                  <TaskAssignees assigneeIds={assigneeIds} />
                </div>
-               <div className="mt-7 flex items-center justify-between space-x-2 2xl:space-x-3">
-                  <div
-                     className="h-1"
-                     style={{
-                        width: progressWidth,
-                        backgroundColor: progressColor,
-                     }}
-                  />
-                  <span>{progress}</span>
-               </div>
+               <TaskProgress
+                  progressPercentage={progressPercentage}
+                  className="mt-7"
+               />
             </div>
          )}
       </Draggable>
