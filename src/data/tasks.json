@@ -6,16 +6,22 @@
       "description":"Nisl nunc mi ipsum faucibus vitae aliquet. Lectus quam id leo in vitae turpis massa sed elementum.",
       "dueDate":"Wed, 12 Aug 2022",
       "progressPercentage": 0,
-      "status":"to do"
+      "status":"to do",
+      "assigneeIds": [
+         "35ea8588-7ce8-4d79-83bd-130173a97012"
+      ]
    },
-   {
+   { 
       "id":"c18ca362-3868-4080-a910-7d3607d15c28",
       "projectId": "54dee36e-42b3-4029-810c-a99a01c27178",
       "title":"Main Page UI",
       "description":"Nisl nunc mi ipsum faucibus vitae aliquet. Lectus quam id leo in vitae turpis massa sed elementum.",
       "dueDate":"Tue, 18 Aug 2022",
       "progressPercentage": 0,
-      "status":"to do"
+      "status":"to do",
+      "assigneeIds": [
+         "35ea8588-7ce8-4d79-83bd-130173a97012"
+      ]
    },
    {
       "id":"f560abd2-41dc-460a-9da1-cc4d5b213fc8",
@@ -24,7 +30,10 @@
       "description":"Nisl nunc mi ipsum faucibus vitae aliquet. Lectus quam id leo in vitae turpis massa sed elementum.",
       "dueDate":"Wed, 5 Aug 2022",
       "progressPercentage": 75,
-      "status":"in progress"
+      "status":"in progress",
+      "assigneeIds": [
+         "cf6304f3-e9e0-43dd-a544-d87a7ae79840"
+      ]
    },
    {
       "id":"587111ab-2798-4ae5-abe7-907b8d9d9266",
@@ -33,6 +42,10 @@
       "description":"Nisl nunc mi ipsum faucibus vitae aliquet. Lectus quam id leo in vitae turpis massa sed elementum.",
       "dueDate":"Wed, 5 Aug 2022",
       "progressPercentage": 100,
-      "status":"done"
+      "status":"done",
+      "assigneeIds": [
+         "35ea8588-7ce8-4d79-83bd-130173a97012",
+         "d040fa7b-a31a-4018-b7f5-141093114d88"
+      ]
    }
 ]

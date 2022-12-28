@@ -1,4 +1,5 @@
 import { Avatar } from 'components/avatar/loadable';
+import { Avatars } from 'components/avatars/loadable';
 import { UserProfile } from 'data/models';
 
 interface Props {
@@ -11,17 +12,12 @@ export function ProjectMembers(props: Props) {
 
    return (
       <div className="flex -space-x-4">
-         {members.map((member) => (
-            <Avatar
-               onClick={(userId) => onClick?.(userId.toString())}
-               key={member.id}
-               userId={member.id}
-               firstName={member.firstName}
-               lastName={member.lastName}
-               className="p-1"
-               backgroundColor={member.avatarColor}
-            />
-         ))}
+         <Avatars
+            users={members}
+            onItemClick={(userId) => {
+               console.log(userId);
+            }}
+         />
       </div>
    );
 }

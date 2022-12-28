@@ -11,7 +11,7 @@ interface TaskCardProps {
 export function TaskCard(props: TaskCardProps) {
    const { index, task } = props;
 
-   const { id, title, dueDate, progressPercentage, status, description } = task;
+   const { id, title, dueDate, progressPercentage, assigneeIds } = task;
 
    const progress = useMemo(() => {
       return `${progressPercentage}%`;
@@ -52,9 +52,13 @@ export function TaskCard(props: TaskCardProps) {
                   </div>
                   <div>
                      <Avatar
-                        userId={''}
-                        firstName={'Raphael'}
-                        lastName={'Ramirez'}
+                        user={{
+                           id: '35ea8588-7ce8-4d79-83bd-130173a97012',
+                           firstName: 'Raphael',
+                           middleName: 'Legaspi',
+                           lastName: 'Ramirez',
+                           avatarColor: '#FFD369',
+                        }}
                         color="bg-primary"
                         className="h-8 w-8"
                         textClassName="text-xs"

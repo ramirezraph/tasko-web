@@ -49,6 +49,7 @@ export function Project() {
                status: task.status as TaskStatus,
             };
          });
+
       setTasks(parsedTasks);
    }, [tasksJson, project]);
 

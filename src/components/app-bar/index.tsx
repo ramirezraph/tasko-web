@@ -6,11 +6,14 @@ function AvatarWithUserName() {
    return (
       <div className="flex items-center space-x-3">
          <Avatar
-            backgroundColor="#FFD369"
-            userId={'35ea8588-7ce8-4d79-83bd-130173a97012'}
-            firstName="Raphael"
-            lastName="Ramirez"
-            onClick={(userId) => {
+            user={{
+               id: '35ea8588-7ce8-4d79-83bd-130173a97012',
+               firstName: 'Raphael',
+               middleName: 'Legaspi',
+               lastName: 'Ramirez',
+               avatarColor: '#FFD369',
+            }}
+            onAvatarClick={(userId) => {
                console.log(userId);
             }}
          />

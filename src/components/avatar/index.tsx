@@ -1,31 +1,20 @@
+import { UserProfile } from 'data/models';
 import { useMemo } from 'react';
 
 type IntrinsicDivProps = React.HtmlHTMLAttributes<HTMLDivElement>;
 
-type Hex = string;
-
 interface AvatarProps {
-   userId: string;
-   firstName: string;
-   lastName: string;
+   user: UserProfile;
    textClassName?: string;
-   backgroundColor?: Hex;
-   onClick?: (userId: string) => void;
+   onAvatarClick?: (userId: string) => void;
 }
 
 type Props = AvatarProps & IntrinsicDivProps;
 
 export function Avatar(props: Props) {
-   const {
-      userId,
-      firstName,
-      lastName,
-      className,
-      textClassName,
-      onClick,
-      backgroundColor,
-      ...rest
-   } = props;
+   const { user, className, textClassName, onAvatarClick, ...rest } = props;
+
+   const { id, firstName, lastName, avatarColor } = user;
 
    const userInitials = useMemo(() => {
       return firstName.charAt(0) + lastName.charAt(0);
@@ -36,12 +25,12 @@ export function Avatar(props: Props) {
 
    return (
       <div
-         onClick={() => onClick?.(userId)}
+         onClick={() => onAvatarClick?.(id)}
          className={`flex h-10 w-10 items-center justify-center rounded-full bg-primary ${className} ${
-            onClick ? clickableAvatarClassName : ''
+            onAvatarClick ? clickableAvatarClassName : ''
          }`}
          style={{
-            backgroundColor: backgroundColor,
+            backgroundColor: avatarColor,
          }}
          {...rest}
       >

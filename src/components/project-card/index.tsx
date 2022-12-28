@@ -1,11 +1,11 @@
 import { Icon } from 'components/icon/loadable';
-import { ProjectMembers } from 'components/project-members/loadable';
 import { ProjectStatus } from 'components/project-status/loadable';
 import { Project, UserProfile } from 'data/models';
 import { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import usersJson from 'data/users.json';
+import { Avatars } from 'components/avatars/loadable';
 
 interface ProjectCardProps {
    project: Project;
@@ -47,7 +47,7 @@ export function ProjectCard(props: ProjectCardProps) {
             <Icon icon="arrowRight" />
          </div>
          <div className="mt-4 flex items-center justify-between">
-            <ProjectMembers members={members} />
+            <Avatars users={members} />
             <div className="flex space-x-6">
                <span className="hidden md:inline">{dateCreated}</span>
                <ProjectStatus status={status} />
