@@ -1,4 +1,4 @@
-import { Button } from 'components/button/loadable';
+import { Button } from 'components/round-button/loadable';
 
 export function NoProject() {
    return (

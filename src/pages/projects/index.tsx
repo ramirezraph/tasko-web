@@ -1,4 +1,4 @@
-import { Button } from 'components/button/loadable';
+import { RoundButton } from 'components/round-button/loadable';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ProjectList } from './components/list/loadable';
@@ -24,12 +24,12 @@ export function Projects() {
             <ProjectList projects={projects} />
          )}
          <div className="mt-16 flex space-x-3 ">
-            <Button
+            <RoundButton
                onClick={onCreateProject}
                icon="plus"
                text="Create new project"
             />
-            <Button icon="invite" text="Join" />
+            <RoundButton icon="invite" text="Join" />
          </div>
       </div>
    );

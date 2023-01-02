@@ -35,10 +35,10 @@ export function AppBar() {
          </Link>
          <div className="flex space-x-6">
             <AvatarWithUserName />
-            <ActionIcon icon="magnify" onPress={() => console.log('Search.')} />
+            <ActionIcon icon="magnify" onClick={() => console.log('Search.')} />
             <ActionIcon
                icon="bell"
-               onPress={() => console.log('Notification.')}
+               onClick={() => console.log('Notification.')}
             />
          </div>
       </div>

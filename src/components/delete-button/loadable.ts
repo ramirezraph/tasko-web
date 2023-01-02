@@ -1,6 +1,6 @@
 import { lazyLoad } from 'utils/loadable';
 
-export const Button = lazyLoad(
+export const DeleteButton = lazyLoad(
    () => import('./index'),
-   (module) => module.Button
+   (module) => module.DeleteButton
 );

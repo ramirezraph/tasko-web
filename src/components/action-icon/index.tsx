@@ -5,17 +5,17 @@ type IntrinsicButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 interface ActionIconProps {
    icon: IconTypes;
-   onPress?: () => void;
+   onClick?: () => void;
    iconClassName?: string;
 }
 
 type Props = ActionIconProps & IntrinsicButtonProps;
 
 export function ActionIcon(props: Props) {
-   const { icon, onPress, className, iconClassName } = props;
+   const { icon, onClick, className, iconClassName } = props;
 
    return (
-      <button onClick={onPress} className={`group  ${className}`}>
+      <button onClick={onClick} className={`group  ${className}`}>
          <Icon
             icon={icon}
             className={`transition-transform duration-300 ease-in-out group-hover:scale-110 ${iconClassName}`}

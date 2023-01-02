@@ -1,4 +1,14 @@
-import { TaskStatus } from './enums/taskStatus';
+export type TaskStatus =
+   | 'to do'
+   | 'on hold'
+   | 'in progress'
+   | 'review'
+   | 'done';
+
+export interface Subtask {
+   title: string;
+   isDone: boolean;
+}
 
 export interface Task {
    id: string;
@@ -9,4 +19,5 @@ export interface Task {
    progressPercentage: number;
    status: TaskStatus;
    assigneeIds: string[];
+   subtasks: Subtask[];
 }

@@ -3,13 +3,13 @@ import { Icon } from 'components/icon/loadable';
 
 type IntrinsicButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-interface ButtonProps {
+interface RoundButtonProps {
    icon?: IconTypes;
    text: string;
    textClassName?: string;
 }
 
-export function Button(props: ButtonProps & IntrinsicButtonProps) {
+export function RoundButton(props: RoundButtonProps & IntrinsicButtonProps) {
    const { icon, text, className, textClassName, ...rest } = props;
 
    return (

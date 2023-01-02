@@ -1,5 +1,4 @@
 import { ActionIcon } from 'components/action-icon/loadable';
-import { Button } from 'components/button/loadable';
 import { ProjectStatus } from 'components/project-status/loadable';
 
 type IntrinsicDivProps = React.HTMLAttributes<HTMLDivElement>;

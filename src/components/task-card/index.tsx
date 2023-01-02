@@ -1,7 +1,8 @@
 import { Draggable } from '@hello-pangea/dnd';
-import { TaskAssignees } from 'components/task-assignees/loadable';
+import { TaskAssignees } from 'components/task-card-assignees/loadable';
 import { TaskProgress } from 'components/task-progress/loadable';
 import { Task } from 'data/models';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 interface TaskCardProps {
    index: number;
@@ -11,7 +12,23 @@ interface TaskCardProps {
 export function TaskCard(props: TaskCardProps) {
    const { index, task } = props;
 
+   const location = useLocation();
+   const navigate = useNavigate();
+
    const { id, title, dueDate, progressPercentage, assigneeIds } = task;
+
+   const onCardClick = () => {
+      navigate(
+         {
+            pathname: `/task/${task.id}`,
+         },
+         {
+            state: {
+               backgroundLocation: location,
+            },
+         }
+      );
+   };
 
    return (
       <Draggable draggableId={id} index={index}>
@@ -21,7 +38,7 @@ export function TaskCard(props: TaskCardProps) {
                ref={provided.innerRef}
                {...provided.draggableProps}
                {...provided.dragHandleProps}
-               onClick={() => console.log('Task Clicked', task)}
+               onClick={onCardClick}
             >
                <div className="flex items-start justify-between">
                   <div className="flex flex-col space-y-1">

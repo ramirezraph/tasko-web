@@ -2,7 +2,7 @@ import image from 'assets/images/undraw_engineering_team.png';
 
 import { Link } from 'react-router-dom';
 import { Page } from 'components/page/loadable';
-import { Button } from 'components/button/loadable';
+import { RoundButton } from 'components/round-button/loadable';
 
 export function Login() {
    return (
@@ -15,9 +15,9 @@ export function Login() {
 
          <div className="mt-16 flex space-x-3">
             <Link to="/">
-               <Button text="Login" icon="login" />
+               <RoundButton text="Login" icon="login" />
             </Link>
-            <Button text="Create an account" icon="userPlus" />
+            <RoundButton text="Create an account" icon="userPlus" />
          </div>
       </Page>
    );

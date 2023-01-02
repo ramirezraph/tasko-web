@@ -1,7 +1,7 @@
 import { Droppable } from '@hello-pangea/dnd';
 import { TaskCard } from 'components/task-card/loadable';
 import { TasksContainerTitle } from 'components/tasks-container-title/loadable';
-import { Task } from 'data/models';
+import { Task, TaskStatus } from 'data/models';
 
 interface TasksContainerProps {
    id: string;

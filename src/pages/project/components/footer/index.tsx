@@ -1,5 +1,4 @@
-import { Avatar } from 'components/avatar/loadable';
-import { Button } from 'components/button/loadable';
+import { RoundButton } from 'components/round-button/loadable';
 import { ProjectMembers } from 'components/project-members/loadable';
 import { Project, UserProfile } from 'data/models';
 import { useMemo } from 'react';
@@ -55,7 +54,7 @@ export function ProjectFooterBar(props: ProjectFooterBarProps) {
             >
                Go to project list
             </button>
-            <Button icon="boxList" text={title} />
+            <RoundButton icon="boxList" text={title} />
          </div>
       </div>
    );

@@ -9,6 +9,16 @@
       "status":"to do",
       "assigneeIds": [
          "35ea8588-7ce8-4d79-83bd-130173a97012"
+      ],
+      "subtasks": [
+         {
+            "title": "Ultrices dui sapien",
+            "isDone": false
+         },
+         {
+            "title": "Pulvinar sapien",
+            "isDone": true
+         }
       ]
    },
    { 
@@ -21,6 +31,16 @@
       "status":"to do",
       "assigneeIds": [
          "35ea8588-7ce8-4d79-83bd-130173a97012"
+      ],
+      "subtasks": [
+         {
+            "title": "App Bar UI",
+            "isDone": false
+         },
+         {
+            "title": "Footer UI",
+            "isDone": false
+         }
       ]
    },
    {
@@ -33,6 +53,8 @@
       "status":"in progress",
       "assigneeIds": [
          "cf6304f3-e9e0-43dd-a544-d87a7ae79840"
+      ],
+      "subtasks": [
       ]
    },
    {
@@ -46,6 +68,7 @@
       "assigneeIds": [
          "35ea8588-7ce8-4d79-83bd-130173a97012",
          "d040fa7b-a31a-4018-b7f5-141093114d88"
-      ]
+      ],
+      "subtasks": []
    }
 ]

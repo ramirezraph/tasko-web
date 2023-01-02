@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { Avatars } from 'components/avatars/loadable';
 import { UserProfile } from 'data/models';
+
 import usersJson from 'data/users.json';
 
 interface TaskAssigneesProps {

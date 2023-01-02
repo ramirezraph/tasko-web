@@ -1,5 +1,5 @@
 import image from 'assets/images/undraw_scrum_board.png';
-import { Button } from 'components/button/loadable';
+import { RoundButton } from 'components/round-button/loadable';
 import { TextArea } from 'components/text-area/loadable';
 import { TextInput } from 'components/text-input/loadable';
 
@@ -28,7 +28,7 @@ export function CreateProject() {
                   placeholder="Tell something about the project."
                   className="mt-4"
                />
-               <Button
+               <RoundButton
                   className="mt-4 w-full rounded-md !bg-primary"
                   text={'Submit and Create'}
                   textClassName="text-center text-background"

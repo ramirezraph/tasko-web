@@ -9,8 +9,13 @@ module.exports = {
             whitesmoke: '#FAFAFA',
             text: '#B9BBBE',
             background: '#222831',
+            error: '#FF6969',
          },
       },
    },
-   plugins: [],
+   plugins: [
+      require('@tailwindcss/forms')({
+         strategy: 'class',
+      }),
+   ],
 };
