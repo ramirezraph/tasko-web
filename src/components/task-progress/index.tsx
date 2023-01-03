@@ -20,16 +20,18 @@ export function TaskProgress(props: Props) {
    }, [progressPercentage]);
 
    const progressColor = useMemo(() => {
-      if (progressPercentage >= 0 && progressPercentage <= 25) {
+      if (progressPercentage >= 0 && progressPercentage <= 10) {
          return '#FF6969';
-      } else if (progressPercentage >= 26 && progressPercentage <= 50) {
-         return '#FFCC69';
-      } else if (progressPercentage >= 51 && progressPercentage <= 75) {
-         return '#FCFF69';
-      } else if (progressPercentage >= 76 && progressPercentage <= 99) {
-         return '#B4FF69';
+      } else if (progressPercentage >= 11 && progressPercentage <= 29) {
+         return '#FFB169';
+      } else if (progressPercentage >= 30 && progressPercentage <= 49) {
+         return '#FFF969';
+      } else if (progressPercentage >= 50 && progressPercentage <= 74) {
+         return '#69B7FF';
+      } else if (progressPercentage >= 75 && progressPercentage <= 99) {
+         return '#69FFD2';
       } else if (progressPercentage === 100) {
-         return '#69FF81';
+         return '#69FF8A';
       }
    }, [progressPercentage]);
 

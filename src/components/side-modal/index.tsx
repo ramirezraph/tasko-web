@@ -11,7 +11,7 @@ interface ModalProps {
 
 type Props = ModalProps & IntrinsicDivProps;
 
-export function Modal(props: Props) {
+export function SideModal(props: Props) {
    const {
       visible,
       closeOnClickOutside = true,

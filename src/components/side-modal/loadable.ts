@@ -1,6 +1,6 @@
 import { lazyLoad } from 'utils/loadable';
 
-export const Modal = lazyLoad(
+export const SideModal = lazyLoad(
    () => import('./index'),
-   (module) => module.Modal
+   (module) => module.SideModal
 );

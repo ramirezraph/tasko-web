@@ -1,5 +1,5 @@
 import { DeleteButton } from 'components/delete-button/loadable';
-import { Modal } from 'components/modal/loadable';
+import { SideModal } from 'components/side-modal/loadable';
 import { Portal } from 'components/portal/loadable';
 import { Subheading } from 'components/subheading/loadable';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -35,7 +35,7 @@ export function TaskDetailsModal(props: TaskDetailsModalProps) {
 
    return (
       <Portal>
-         <Modal visible={true} onClose={onClose}>
+         <SideModal visible={true} onClose={onClose}>
             <TaskDetailsTitlebar title={task.title} status={task.status} />
             <TaskProgress progressPercentage={task.progressPercentage} />
             <div>
@@ -53,7 +53,7 @@ export function TaskDetailsModal(props: TaskDetailsModalProps) {
             <div>
                <DeleteButton text="Delete this task" className="mt-10" />
             </div>
-         </Modal>
+         </SideModal>
       </Portal>
    );
 }

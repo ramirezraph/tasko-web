@@ -10,7 +10,7 @@ interface CheckboxProps {
 export function Checkbox(props: CheckboxProps) {
    const { id, name, value, text, className, labelClassName } = props;
    return (
-      <div className="flex cursor-pointer items-center  space-x-5">
+      <div className="flex cursor-pointer items-center space-x-5">
          <input
             checked={value}
             type="checkbox"
