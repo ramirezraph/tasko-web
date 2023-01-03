@@ -11,6 +11,9 @@ module.exports = {
             background: '#222831',
             error: '#FF6969',
          },
+         fontFamily: {
+            inter: ['Inter', 'Avenir', 'Helvetica', 'Arial', 'sans-serif'],
+         },
       },
    },
    plugins: [

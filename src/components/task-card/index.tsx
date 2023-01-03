@@ -2,6 +2,7 @@ import { Draggable } from '@hello-pangea/dnd';
 import { TaskAssignees } from 'components/task-card-assignees/loadable';
 import { TaskProgress } from 'components/task-progress/loadable';
 import { Task } from 'data/models';
+import format from 'date-fns/format';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 interface TaskCardProps {
@@ -15,7 +16,14 @@ export function TaskCard(props: TaskCardProps) {
    const location = useLocation();
    const navigate = useNavigate();
 
-   const { id, title, dueDate, progressPercentage, assigneeIds } = task;
+   const {
+      id,
+      title,
+      timeEstimate,
+      progressPercentage,
+      assigneeIds,
+      subtasks,
+   } = task;
 
    const onCardClick = () => {
       navigate(
@@ -43,14 +51,18 @@ export function TaskCard(props: TaskCardProps) {
                <div className="flex items-start justify-between">
                   <div className="flex flex-col space-y-1">
                      <p className="text-sm text-primary">{title}</p>
-                     <p className="text-xs text-text">{dueDate}</p>
+                     <p className="text-xs text-text">
+                        {format(new Date(timeEstimate), 'eee, d MMM yyyy')}
+                     </p>
                   </div>
                   <TaskAssignees assigneeIds={assigneeIds} />
                </div>
-               <TaskProgress
-                  progressPercentage={progressPercentage}
-                  className="mt-7"
-               />
+               {subtasks.length > 0 ? (
+                  <TaskProgress
+                     progressPercentage={progressPercentage}
+                     className="mt-7"
+                  />
+               ) : null}
             </div>
          )}
       </Draggable>

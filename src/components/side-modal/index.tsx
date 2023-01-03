@@ -49,7 +49,7 @@ export function SideModal(props: Props) {
       <div className="fixed top-0 left-0 z-[900] flex h-screen w-screen">
          <div className="flex-1 bg-black/30" onClick={onClickOutside}></div>
          <div
-            className={`z-[999] flex w-[430px] flex-col space-y-4 bg-background/80 py-12 px-8 ring-1 ring-primary/10 backdrop-blur-[2px] ${className}`}
+            className={`z-[999] flex w-[500px] flex-col space-y-4 bg-background/80 py-12 px-8 ring-1 ring-primary/10 backdrop-blur-[2px] ${className}`}
             {...rest}
          >
             {children}

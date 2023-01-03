@@ -1,4 +1,5 @@
 import { TaskDetailsModal } from 'components/task-details-modal/loadable';
+import { TaskNewModal } from 'components/task-new-modal/loadable';
 import {
    CreateProject,
    Login,
@@ -31,6 +32,7 @@ export function App() {
          </Routes>
          {state?.backgroundLocation && (
             <Routes>
+               <Route path="/task/new" element={<TaskNewModal />} />
                <Route path="/task/:taskId" element={<TaskDetailsModal />} />
             </Routes>
          )}

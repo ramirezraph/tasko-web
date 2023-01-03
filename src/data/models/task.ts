@@ -15,7 +15,7 @@ export interface Task {
    projectId: string;
    title: string;
    description: string;
-   dueDate: string;
+   timeEstimate: string;
    progressPercentage: number;
    status: TaskStatus;
    assigneeIds: string[];

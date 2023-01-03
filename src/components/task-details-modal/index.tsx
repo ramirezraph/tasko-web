@@ -1,7 +1,6 @@
 import { DeleteButton } from 'components/delete-button/loadable';
 import { SideModal } from 'components/side-modal/loadable';
 import { Portal } from 'components/portal/loadable';
-import { Subheading } from 'components/subheading/loadable';
 import { useNavigate, useParams } from 'react-router-dom';
 import { TaskDetailsAssignees } from 'components/task-details-assignees/loadable';
 import { TaskDetailsSubtasks } from 'components/task-details-subtasks/loadable';
@@ -10,13 +9,11 @@ import tasksJson from 'data/tasks.json';
 import { TaskProgress } from 'components/task-progress/loadable';
 import { TaskDetailsTitlebar } from 'components/task-details-titlebar/loadable';
 import { Task, TaskStatus } from 'data/models';
+import { TaskDetailsDescription } from 'components/task-details-description/loadable';
+import { TaskDetailsTimeEstimate } from 'components/task-details-timeEstimate/loadable';
 
-interface TaskDetailsModalProps {}
-
-export function TaskDetailsModal(props: TaskDetailsModalProps) {
+export function TaskDetailsModal() {
    const { taskId } = useParams();
-
-   const {} = props;
 
    const navigate = useNavigate();
 
@@ -38,16 +35,8 @@ export function TaskDetailsModal(props: TaskDetailsModalProps) {
          <SideModal visible={true} onClose={onClose}>
             <TaskDetailsTitlebar title={task.title} status={task.status} />
             <TaskProgress progressPercentage={task.progressPercentage} />
-            <div>
-               <Subheading>Description</Subheading>
-               <p className="mt-1 text-sm text-whitesmoke">
-                  {task.description}
-               </p>
-            </div>
-            <div>
-               <Subheading>Due</Subheading>
-               <p className="mt-1 text-sm text-whitesmoke">{task.dueDate}</p>
-            </div>
+            <TaskDetailsDescription description={task.description} />
+            <TaskDetailsTimeEstimate timeEstimate={task.timeEstimate} />
             <TaskDetailsSubtasks subtasks={task.subtasks} />
             <TaskDetailsAssignees assigneeIds={task.assigneeIds} />
             <div>

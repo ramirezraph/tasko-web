@@ -31,9 +31,15 @@ export function TaskDetailsAssignees(props: TaskDetailsAssigneesProps) {
       <>
          <Subheading>Assignee/s</Subheading>
          <div className="mt-4 flex flex-col space-y-6">
-            {assignees.map((assignee) => (
-               <TaskAssignee key={assignee.id} assignee={assignee} />
-            ))}
+            {assignees.length > 0 ? (
+               assignees.map((assignee) => (
+                  <TaskAssignee key={assignee.id} assignee={assignee} />
+               ))
+            ) : (
+               <span className="text-sm font-light italic">
+                  No assignee for this task.
+               </span>
+            )}
             <AddAssigneeButton />
          </div>
       </>
