@@ -1,14 +1,32 @@
+import { AddSubtaskPopover } from 'components/add-subtask-popover/loadable';
 import { AddSubtaskButton } from 'components/add-subtasks-button/loadable';
+import { Popover } from 'components/Popover/loadable';
 import { Subheading } from 'components/subheading/loadable';
 import { Subtask } from 'components/subtask/loadable';
-import { Subtask as ISubtask } from 'data/models/task';
+import { Task, Subtask as ISubtask } from 'data/models';
+import { useState } from 'react';
 
 interface TaskDetailsSubtasksProps {
    subtasks: ISubtask[];
+   setTask?: React.Dispatch<React.SetStateAction<Task>>;
 }
 
 export function TaskDetailsSubtasks(props: TaskDetailsSubtasksProps) {
-   const { subtasks } = props;
+   const { subtasks, setTask } = props;
+
+   const [isOpen, setOpen] = useState(false);
+
+   const onCreate = (newSubtask: ISubtask) => {
+      setTask?.((task) => ({
+         ...task,
+         subtasks: [...task.subtasks, newSubtask],
+      }));
+      setOpen(false);
+   };
+
+   const onCancel = () => {
+      setOpen(false);
+   };
 
    return (
       <>
@@ -29,7 +47,13 @@ export function TaskDetailsSubtasks(props: TaskDetailsSubtasksProps) {
                </span>
             )}
 
-            <AddSubtaskButton />
+            <Popover
+               isOpen={isOpen}
+               target={<AddSubtaskButton onClick={() => setOpen((v) => !v)} />}
+               children={
+                  <AddSubtaskPopover onCreate={onCreate} onCancel={onCancel} />
+               }
+            />
          </div>
       </>
    );

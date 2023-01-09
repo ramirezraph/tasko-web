@@ -2,9 +2,10 @@ import { AddAssigneeButton } from 'components/add-assignee-button/loadable';
 import { Subheading } from 'components/subheading/loadable';
 import { TaskAssignee } from 'components/task-assignee/loadable';
 import { UserProfile } from 'data/models';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 
 import usersJson from 'data/users.json';
+import { Popover } from 'components/Popover/loadable';
 
 interface TaskDetailsAssigneesProps {
    assigneeIds: string[];
@@ -12,6 +13,8 @@ interface TaskDetailsAssigneesProps {
 
 export function TaskDetailsAssignees(props: TaskDetailsAssigneesProps) {
    const { assigneeIds } = props;
+
+   const [isOpen, setOpen] = useState(false);
 
    const assignees: UserProfile[] = useMemo(() => {
       return usersJson
@@ -40,7 +43,12 @@ export function TaskDetailsAssignees(props: TaskDetailsAssigneesProps) {
                   No assignee for this task.
                </span>
             )}
-            <AddAssigneeButton />
+
+            <Popover
+               isOpen={isOpen}
+               target={<AddAssigneeButton onClick={() => setOpen((v) => !v)} />}
+               children={<div>Hello this is popover!</div>}
+            />
          </div>
       </>
    );

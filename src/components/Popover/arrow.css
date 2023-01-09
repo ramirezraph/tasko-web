@@ -1,0 +1,19 @@
+#popper {
+}
+
+#popper div:first-child {
+   position: relative;
+   z-index: 999;
+}
+
+#popper div:first-child::before {
+   position: absolute;
+   content: '';
+   width: 10px;
+   height: 10px;
+   left: calc(100% - 95%);
+   top: -5px;
+   background-color: inherit;
+   transform: rotate(45deg);
+   z-index: 10;
+}

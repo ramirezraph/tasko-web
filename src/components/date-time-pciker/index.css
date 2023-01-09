@@ -41,3 +41,7 @@
 .react-datepicker__triangle {
    @apply hidden;
 }
+
+.react-datepicker__day--disabled {
+   @apply bg-secondary/20;
+}

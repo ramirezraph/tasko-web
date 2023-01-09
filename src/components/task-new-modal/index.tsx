@@ -27,7 +27,7 @@ export function TaskNewModal() {
       projectId: '',
       title: 'New Task 1',
       description: '',
-      timeEstimate: 'Tue, 18 Aug 2022',
+      timeEstimate: new Date().toISOString(),
       progressPercentage: 0,
       status: 'to do',
       assigneeIds: [],
@@ -58,8 +58,11 @@ export function TaskNewModal() {
                description={task.description}
                setTask={setTask}
             />
-            <TaskDetailsTimeEstimate timeEstimate={task.timeEstimate} />
-            <TaskDetailsSubtasks subtasks={task.subtasks} />
+            <TaskDetailsTimeEstimate
+               timeEstimate={task.timeEstimate}
+               setTask={setTask}
+            />
+            <TaskDetailsSubtasks subtasks={task.subtasks} setTask={setTask} />
             <TaskDetailsAssignees assigneeIds={task.assigneeIds} />
             <div>
                <div className="mt-6 flex space-x-3">
