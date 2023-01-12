@@ -1,6 +1,6 @@
 import { AddSubtaskPopover } from 'components/add-subtask-popover/loadable';
 import { AddSubtaskButton } from 'components/add-subtasks-button/loadable';
-import { Popover } from 'components/Popover/loadable';
+import { Popover } from 'components/popover/loadable';
 import { Subheading } from 'components/subheading/loadable';
 import { Subtask } from 'components/subtask/loadable';
 import { Task, Subtask as ISubtask } from 'data/models';
@@ -53,6 +53,7 @@ export function TaskDetailsSubtasks(props: TaskDetailsSubtasksProps) {
                children={
                   <AddSubtaskPopover onCreate={onCreate} onCancel={onCancel} />
                }
+               onClickOutside={onCancel}
             />
          </div>
       </>

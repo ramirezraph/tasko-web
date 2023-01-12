@@ -63,7 +63,10 @@ export function TaskNewModal() {
                setTask={setTask}
             />
             <TaskDetailsSubtasks subtasks={task.subtasks} setTask={setTask} />
-            <TaskDetailsAssignees assigneeIds={task.assigneeIds} />
+            <TaskDetailsAssignees
+               assigneeIds={task.assigneeIds}
+               setTask={setTask}
+            />
             <div>
                <div className="mt-6 flex space-x-3">
                   <CreateTaskButton onClick={onSubmit} />

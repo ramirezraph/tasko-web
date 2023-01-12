@@ -24,7 +24,7 @@ export function TaskDetailsDescription(props: TaskDetailsDescriptionProps) {
             onChange={onChange}
             name="task-description"
             id="task-description"
-            className="mt-1 bg-transparent text-sm text-whitesmoke focus:outline-none focus:outline-offset-4 focus:outline-whitesmoke/30"
+            className="mt-1 shrink-0 bg-transparent text-sm text-whitesmoke focus:outline-none focus:outline-offset-4 focus:outline-whitesmoke/30"
             placeholder="(none)"
             rows={3}
          />

@@ -1,39 +1,22 @@
 import { RoundButton } from 'components/round-button/loadable';
 import { ProjectMembers } from 'components/project-members/loadable';
-import { Project, UserProfile } from 'data/models';
-import { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-import usersJson from 'data/users.json';
+import { useProjectSlice } from 'pages/project/slice';
 
 interface ProjectFooterBarProps {
-   project: Project;
+   projectTitle: string;
 }
 
 export function ProjectFooterBar(props: ProjectFooterBarProps) {
    const navigate = useNavigate();
 
-   const { project } = props;
+   const { projectTitle } = props;
 
-   const { title, memberIds } = project;
+   const { slice } = useProjectSlice();
 
    const goToProjectList = () => {
       navigate('/');
    };
-
-   const members: UserProfile[] = useMemo(() => {
-      return usersJson
-         .filter((user) => memberIds.includes(user.id))
-         .map((user) => {
-            return {
-               id: user.id,
-               firstName: user.firstName,
-               middleName: user.middleName,
-               lastName: user.lastName,
-               avatarColor: user.avatarColor,
-            };
-         });
-   }, [usersJson, memberIds]);
 
    const onButtonHoverClassNames =
       'transition-colors duration-300 ease-in-out hover:text-whitesmoke/80';
@@ -42,7 +25,7 @@ export function ProjectFooterBar(props: ProjectFooterBarProps) {
       <div className="flex justify-between">
          <div className="flex items-center space-x-4">
             <ProjectMembers
-               members={members}
+               members={slice.projectMembers}
                onClick={(memberIds) => console.log(memberIds)}
             />
             <button className={onButtonHoverClassNames}>Clear filters</button>
@@ -54,7 +37,7 @@ export function ProjectFooterBar(props: ProjectFooterBarProps) {
             >
                Go to project list
             </button>
-            <RoundButton icon="boxList" text={title} />
+            <RoundButton icon="boxList" text={projectTitle} />
          </div>
       </div>
    );

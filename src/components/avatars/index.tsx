@@ -9,16 +9,19 @@ interface ItemStyles {
 interface AvatarsProps {
    users: UserProfile[];
    itemStyles?: ItemStyles;
+   className?: string;
+
    onItemClick?: (userId: string) => void;
+   selectedUsers?: UserProfile[];
 }
 
 type Props = AvatarsProps;
 
 export function Avatars(props: Props) {
-   const { users, itemStyles, onItemClick } = props;
+   const { users, itemStyles, className, onItemClick, selectedUsers } = props;
 
    return (
-      <div className="flex -space-x-4">
+      <div className={`flex -space-x-4 ${className}`}>
          {users.map((member) => (
             <Avatar
                key={member.id}
@@ -26,6 +29,7 @@ export function Avatars(props: Props) {
                textClassName={itemStyles?.textClassName}
                user={member}
                onAvatarClick={onItemClick}
+               isSelected={selectedUsers?.includes(member)}
             />
          ))}
       </div>
