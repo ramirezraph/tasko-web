@@ -27,3 +27,16 @@ $ yarn dev
 ```
 
 # Screenshots
+Note: The project is still in development so everything are heavily subject to changes.
+
+### Login Page
+<img src="demo/login.png" />
+
+### Projects List Page
+<img src="demo/projects.png" />
+
+### Project Board Page
+<img src="demo/board.png" />
+
+### Project Board Page - Task
+<img src="demo/task.png" />
